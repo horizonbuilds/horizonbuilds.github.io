@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0d1030">
+<title>Horizon Builds - כלים קטנים לחיים</title>
+<meta name="description" content="אוסף האתרים והאפליקציות של Horizon Builds: משלוחים, תחבורה, מטבח, צמחים ועוד.">
+<style>
+:root{--ink:#f6f4ff;--mut:rgba(246,244,255,.72);--glass:rgba(255,255,255,.09);--line:rgba(255,255,255,.2)}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html{background:#0d1030}
+body{min-height:100vh;color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans Hebrew","Arial Hebrew",Arial,sans-serif;line-height:1.45;
+background:linear-gradient(180deg,#0d1030 0%,#2a1b5e 38%,#7a2f6b 66%,#e8734a 92%,#ffb86b 100%) fixed;
+padding:max(20px,env(safe-area-inset-top)) 16px max(32px,env(safe-area-inset-bottom));overflow-x:hidden}
+.orb{position:fixed;border-radius:50%;filter:blur(60px);opacity:.45;pointer-events:none;z-index:0}
+.o1{width:280px;height:280px;background:#4cc9f0;top:-80px;left:-90px}
+.o2{width:300px;height:300px;background:#f72585;top:40vh;right:-120px}
+.o3{width:260px;height:260px;background:#ffd166;bottom:-90px;left:10%}
+main{position:relative;z-index:1;max-width:1120px;margin:0 auto}
+header{padding:28px 4px 22px;display:flex;align-items:center;gap:16px}
+.sun{flex:none;width:64px;height:64px;border-radius:50%;background:radial-gradient(circle at 50% 40%,#fff3c4,#ffd166 55%,#ff9e4a);box-shadow:0 0 0 6px rgba(255,209,102,.18),0 10px 40px rgba(255,158,74,.55);position:relative;overflow:hidden}
+.sun:after{content:"";position:absolute;left:0;right:0;bottom:0;height:34%;background:#0d1030;border-top:2px solid #fff0c8}
+h1{font-size:clamp(28px,7vw,44px);line-height:1.1;font-weight:800;letter-spacing:-.02em}
+header p{color:var(--mut);font-size:15px;margin-top:6px}
+.stats{display:flex;gap:8px;flex-wrap:wrap;margin:4px 0 22px}
+.stat{background:var(--glass);border:1px solid var(--line);border-radius:999px;padding:7px 14px;font-size:13px;color:var(--mut);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px)}
+.stat b{color:var(--ink);font-size:15px;margin-inline-start:4px}
+h2{font-size:13px;font-weight:700;letter-spacing:.08em;color:var(--mut);margin:26px 4px 12px;display:flex;align-items:center;gap:10px}
+h2:after{content:"";flex:1;height:1px;background:linear-gradient(90deg,var(--line),transparent)}
+.grid{display:grid;grid-template-columns:1fr;gap:14px}
+@media(min-width:680px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1040px){.grid{grid-template-columns:repeat(3,1fr)}}
+a.card{--a:#4cc9f0;display:flex;flex-direction:column;text-decoration:none;color:inherit;background:var(--glass);border:1px solid var(--line);border-radius:24px;overflow:hidden;position:relative;
+-webkit-backdrop-filter:blur(22px) saturate(1.4);backdrop-filter:blur(22px) saturate(1.4);box-shadow:0 12px 40px rgba(5,5,30,.35),inset 0 1px 0 rgba(255,255,255,.25);transition:transform .2s ease,border-color .2s ease}
+a.card:active{transform:scale(.985)}
+@media(hover:hover){a.card:hover{transform:translateY(-4px);border-color:var(--a)}}
+a.card:before{content:"";position:absolute;inset-inline:0;top:0;height:3px;background:var(--a);z-index:2}
+.shot{aspect-ratio:390/260;overflow:hidden;background:rgba(0,0,0,.25);position:relative}
+.shot img{display:block;width:100%;height:100%;object-fit:cover;object-position:top center}
+.shot:after{content:"";position:absolute;inset:auto 0 0 0;height:38%;background:linear-gradient(0deg,rgba(13,16,48,.55),transparent)}
+.tile{display:flex;align-items:center;justify-content:center;font-size:72px;background:radial-gradient(circle at 30% 20%,var(--a),transparent 60%),linear-gradient(135deg,#1b2a6b,#6a2c91 60%,#c2417a)}
+.tile span{filter:drop-shadow(0 8px 18px rgba(0,0,0,.4))}
+.body{padding:14px 16px 16px;display:flex;flex-direction:column;gap:8px;flex:1}
+.top{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.name{font-size:19px;font-weight:750;letter-spacing:-.01em}
+.tag{flex:none;font-size:11.5px;font-weight:700;color:#10122e;background:var(--a);padding:3px 10px;border-radius:999px}
+.desc{font-size:14.5px;color:var(--mut)}
+.go{margin-top:auto;padding-top:6px;font-size:13.5px;font-weight:700;color:var(--a);display:flex;align-items:center;gap:6px}
+.go svg{width:14px;height:14px}
+.url{direction:ltr;unicode-bidi:isolate;font-weight:500;font-size:12px;color:rgba(246,244,255,.5);margin-inline-start:auto}
+footer{text-align:center;color:var(--mut);font-size:12.5px;margin-top:34px;opacity:.85}
+@media(prefers-reduced-motion:reduce){a.card{transition:none}}
+</style>
+</head>
+<body>
+<div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div>
+<main>
+<header>
+ <div class="sun" aria-hidden="true"></div>
+ <div><h1>Horizon Builds</h1><p>כלים קטנים שפותרים בעיות יומיומיות</p></div>
+</header>
+<div class="stats"><span class="stat">אתרים<b>11</b></span><span class="stat">בעברית<b>✓</b></span></div>
+
+<h2>היום-יום</h2>
+<section class="grid">
+ <a class="card" style="--a:#7cf29a" href="https://horizonbuilds.github.io/deliveries/">
+  <div class="shot tile"><span>📦</span></div>
+  <div class="body"><div class="top"><span class="name">המשלוחים שלי</span><span class="tag">מעקב</span></div>
+  <p class="desc">כל ההזמנות והמצב שלהן במקום אחד: בדרך, בהמתנה ונמסרו.</p>
+  <div class="go">פתיחה <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3 5 8l5 5"/></svg><span class="url">/deliveries</span></div></div>
+ </a>
+ <a class="card" style="--a:#b197fc" href="https://horizonbuilds.github.io/focus-ofek/">
+  <div class="shot"><img src="img/focus-ofek.jpg" width="390" height="330" loading="lazy" alt="צילום מסך של אפליקציית פוקוס"></div>
+  <div class="body"><div class="top"><span class="name">פוקוס</span><span class="tag">אפליקציה</span></div>
+  <p class="desc">מנהל משימות ליום אחד: מה דחוף, מה באיחור, ומה כבר הושלם.</p>
+  <div class="go">פתיחה <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3 5 8l5 5"/></svg><span class="url">/focus-ofek</span></div></div>
+ </a>
+ <a class="card" style="--a:#ffd43b" href="https://horizonbuilds.github.io/bus-553-widget/">
+  <div class="shot"><img src="img/bus-553-widget.jpg" width="390" height="330" loading="lazy" alt="צילום מסך של עמוד ההורדה של ווידג'ט קו 553"></div>
+  <div class="body"><div class="top"><span class="name">האוטובוס של אופק</span><span class="tag">אנדרואיד</span></div>
+  <p class="desc">ווידג'ט לזמני קו 553, עם חלופות והתראה חיה.</p>
+  <div class="go">פתיחה <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3 5 8l5 5"/></svg><span class="url">/bus-553-widget</span></div></div>
+ </a>
+ <a class="card" style="--a:#69db7c" href="https://horizonbuilds.github.io/hashvaat-mekhirim/">
+  <div class="shot"><img src="img/hashvaat-mekhirim.jpg" width="390" height="330" loading="lazy" alt="צילום מסך של השוואת מחירי סופר"></div>
+  <div class="body"><div class="top"><span class="name">השוואת מחירי סופר</span><span class="tag">אתר</span></div>
+  <p class="desc">הסל הזול ביותר בין הרשתות, כולל דירוג ופער במחיר.</p>
+  <div class="go">פתיחה <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3 5 8l5 5"/></svg><span class="url">/hashvaat-mekhirim</span></div></div>
+ </a>
+ <a class="card" style="--a:#ff6b6b" href="https://horizonbuilds.github.io/ofri-red-line/">
+  <div class="shot"><img src="img/ofri-red-line.jpg" width="390" height="330" loading="lazy" alt="צילום מסך של זמני הרכבת הקלה"></div>
+  <div class="body"><div class="top"><span class="name">הרכבת הקלה</span><span class="tag">iPhone</span></div>
+  <p class="desc">זמני הגעה חיים בשנקר, לכיוון התחנה המרכזית פתח תקווה.</p>
+  <div class="go">פתיחה <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3 5 8l5 5"/></svg><span class="url">/ofri-red-line</span></div></div>
+ </a>
+ <a class="card" style="--a:#4dabf7" href="https://horizonbuilds.github.io/ofri-bus-23/">
+  <div class="shot"><img src="img/ofri-bus-23.jpg" width="390" height="330" loading="lazy" alt="צילום מסך של זמני קו 23"></div>
+  <div class="body"><div class="top"><span class="name">קו 23</span><span class="tag">iPhone</span></div>
+  <p class="desc">זמני הגעה חיים לתחנת יהודית, ישר במסך הבית.</p>
+  <div class="go">פתיחה <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3 5 8l5 5"/></svg><span class="url">/ofri-bus-23</span></div></div>
+ </a>
+</section>
+
+<h2>בית ומטבח</h2>
+<section class="grid">
+ <a class="card" style="--a:#ffa94d" href="https://kitchen-ofri-ofek.github.io/">
+  <div class="shot"><img src="img/kitchen-ofri-ofek.jpg" width="390" height="330" loading="lazy" alt="צילום מסך של אתר המתכונים"></div>
+  <div class="body"><div class="top"><span class="name">המטבח שלנו</span><span class="tag">מתכונים</span></div>
+  <p class="desc">מתכונים טעימים בלי קמח ובלי סוכר, עם חיפוש וסינון.</p>
+  <div class="go">פתיחה <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3 5 8l5 5"/></svg><span class="url">kitchen-ofri-ofek</span></div></div>
+ </a>
+ <a class="card" style="--a:#63e6be" href="https://jungle-ofri-ofek.github.io/">
+  <div class="shot"><img src="img/jungle-ofri-ofek.jpg" width="390" height="330" loading="lazy" alt="צילום מסך של אתר הצמחים"></div>
+  <div class="body"><div class="top"><span class="name">הג'ונגל</span><span class="tag">צמחים</span></div>
+  <p class="desc">טיפול בצמחי הבית: השקיה, לוח זמנים והתראות.</p>
+  <div class="go">פתיחה <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3 5 8l5 5"/></svg><span class="url">jungle-ofri-ofek</span></div></div>
+ </a>
+ <a class="card" style="--a:#ff922b" href="https://horizonbuilds.github.io/beko-bim22301x/">
+  <div class="shot"><img src="img/beko-bim22301x.jpg" width="390" height="330" loading="lazy" alt="צילום מסך של מדריך התנור"></div>
+  <div class="body"><div class="top"><span class="name">מדריך התנור</span><span class="tag">מדריך</span></div>
+  <p class="desc">Beko BIM22301X: תוכניות, טבלאות בישול וטיפים.</p>
+  <div class="go">פתיחה <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3 5 8l5 5"/></svg><span class="url">/beko-bim22301x</span></div></div>
+ </a>
+ <a class="card" style="--a:#38d9a9" href="https://horizonbuilds.github.io/kochava-laundry-helper/">
+  <div class="shot"><img src="img/kochava-laundry-helper.jpg" width="390" height="330" loading="lazy" alt="צילום מסך של עוזרת הכביסה"></div>
+  <div class="body"><div class="top"><span class="name">עוזרת הכביסה</span><span class="tag">צ'אט</span></div>
+  <p class="desc">שואלים על מכונת הכביסה Siemens ומקבלים תשובה מיד.</p>
+  <div class="go">פתיחה <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3 5 8l5 5"/></svg><span class="url">/kochava-laundry-helper</span></div></div>
+ </a>
+</section>
+
+<h2>ניסויים</h2>
+<section class="grid">
+ <a class="card" style="--a:#f0c35a" href="https://horizonbuilds.github.io/ring-live-tryon/">
+  <div class="shot"><img src="img/ring-live-tryon.jpg" width="390" height="330" loading="lazy" alt="צילום מסך של מדידת טבעת במצלמה"></div>
+  <div class="body"><div class="top"><span class="name">מדידת טבעת</span><span class="tag">מצלמה</span></div>
+  <p class="desc">מדידה בזמן אמת על היד, וזיהוי היד קורה אצלך בלי להעלות וידאו.</p>
+  <div class="go">פתיחה <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3 5 8l5 5"/></svg><span class="url">/ring-live-tryon</span></div></div>
+ </a>
+</section>
+
+<footer>Horizon Builds · <span dir="ltr">github.com/horizonbuilds</span></footer>
+</main>
+</body>
+</html>
